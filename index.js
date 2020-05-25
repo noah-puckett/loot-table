@@ -1,19 +1,24 @@
-import { dummyData } from './data/dummyData.js';
 import { getRandomItem, displayLootItem } from './utils/helperFunctions.js';
 
-const root = document.getElementById('root');
-const ul = document.createElement('ul');
-const refreshButton = document.createElement('button');
 
-dummyData.forEach(monster => {
-    const randomItem = getRandomItem(monster.lootTable);
-    const li = displayLootItem(monster.monsterRace, randomItem);
-    ul.appendChild(li);
-})
+async function renderData() {
 
+    const root = document.getElementById('root');
+    const ul = document.createElement('ul');
+    const refreshButton = document.createElement('button');
+    
+    const api = await fetch('http://localhost:8000/loot');
+    const data = await api.json();
 
-refreshButton.textContent = 'Re-Randomize!';
-refreshButton.onclick = () => { location.reload() }
+    data.forEach(lootItem => {
+        const li = displayLootItem(lootItem);
+        ul.appendChild(li);
+    })
 
-root.appendChild(ul);
-root.appendChild(refreshButton);
+    refreshButton.textContent = 'Re-Randomize!';
+    refreshButton.onclick = () => { location.reload() }
+    
+    root.appendChild(ul);
+    root.appendChild(refreshButton);
+}
+renderData()

@@ -47,7 +47,7 @@ table {
 	border-spacing: 0;
 }
 
-/* ******************************************************************************** */
+/* *****************************************END CSS RESET*************************************** */
 
 
 h1 {
@@ -70,7 +70,7 @@ li {
 }
 
 
-.monster-card {
+.loot-card {
     display: flex;
     flex-wrap: wrap;
     padding: 2vw;
@@ -91,10 +91,10 @@ li {
     transition: .02s ease-in-out;
 }
 
-.monster-card:hover {
+.loot-card:hover {
     transform: scale(1.05);
 }
 
-.monster-card p, h3, h1 {
+.loot-card p, h3, h1 {
     color: rgb(85, 85, 85)
 }

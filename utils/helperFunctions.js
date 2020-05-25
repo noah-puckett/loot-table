@@ -2,24 +2,20 @@ export const getRandomItem = (lootTable) => {
     return lootTable[Math.floor(Math.random() * Math.floor(lootTable.length))];
 }
 
-export const displayLootItem = (monsterType, lootItem) => {
+export const displayLootItem = (lootItem) => {
     const parentEl = document.createElement('li');
-    parentEl.className = 'monster-card';
+    parentEl.className = 'loot-card';
 
-    const monsterTitle = document.createElement('h1');
-    monsterTitle.textContent = monsterType;
-    parentEl.appendChild(monsterTitle);
-
-    const itemTitle = document.createElement('h3');
-    itemTitle.textContent = `Item Name: ${lootItem.treasureName}`;
-    parentEl.appendChild(itemTitle);
+    const itemName = document.createElement('h1');
+    itemName.textContent = `Item Name: ${lootItem.name}`;
+    parentEl.appendChild(itemName);
 
     const itemDesc = document.createElement('p');
-    itemDesc.textContent = `Description: ${lootItem.treasureDesc}`;
+    itemDesc.textContent = `Description: ${lootItem.description}`;
     parentEl.appendChild(itemDesc);
 
     const itemVal = document.createElement('p');
-    itemVal.textContent = `Value: ${lootItem.treasureVal}`;
+    itemVal.textContent = `Value: ${lootItem.value}`;
     parentEl.appendChild(itemVal);
 
     return parentEl;
