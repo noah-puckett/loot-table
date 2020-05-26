@@ -1,11 +1,3 @@
-/**************api utility**************/
-
-export const fetchFromApi = async(URL) => {
-    const rawData = await fetch(URL);
-    const parsedData = await rawData.json();
-    return parsedData;
-};
-
 
 /**************items, loot, monsters**************/
 export const getRandomItem = (lootTable) => {
@@ -14,7 +6,7 @@ export const getRandomItem = (lootTable) => {
 
 export const displayLootItem = (lootItem) => {
     const parentEl = document.createElement('li');
-    parentEl.className = 'loot-card';
+    parentEl.className = 'card';
 
     const itemName = document.createElement('h1');
     itemName.textContent = `Item Name: ${lootItem.name}`;
@@ -33,7 +25,7 @@ export const displayLootItem = (lootItem) => {
 
 export const displayMonsterItem = (monsterItem) => {
     const parentEl = document.createElement('li');
-    parentEl.className = 'loot-card';
+    parentEl.className = 'card';
 
     const monsterName = document.createElement('h1');
     monsterName.textContent = `Monster Race: ${monsterItem.race}`;
