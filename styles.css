@@ -70,12 +70,12 @@ li {
 }
 
 
-.loot-card {
+.card {
     display: flex;
     flex-wrap: wrap;
     padding: 2vw;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-evenly;
     margin: 2%;
 
@@ -91,10 +91,10 @@ li {
     transition: .02s ease-in-out;
 }
 
-.loot-card:hover {
+.card:hover {
     transform: scale(1.05);
 }
 
-.loot-card p, h3, h1 {
+.card p, h3, h1 {
     color: rgb(85, 85, 85)
 }
