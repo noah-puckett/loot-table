@@ -1,3 +1,4 @@
+/**************api utility**************/
 
 export const fetchFromApi = async(URL) => {
     const rawData = await fetch(URL);
@@ -6,16 +7,7 @@ export const fetchFromApi = async(URL) => {
 };
 
 
-
-
-
-
-
-
-
-
-
-//*****************************************items, loot, monsters*******************************************/
+/**************items, loot, monsters**************/
 export const getRandomItem = (lootTable) => {
     return lootTable[Math.floor(Math.random() * Math.floor(lootTable.length))];
 };
@@ -52,4 +44,4 @@ export const displayMonsterItem = (monsterItem) => {
     parentEl.appendChild(monsterRank);
 
     return parentEl;
-}
+};
