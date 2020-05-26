@@ -1,6 +1,6 @@
 export const getRandomItem = (lootTable) => {
     return lootTable[Math.floor(Math.random() * Math.floor(lootTable.length))];
-}
+};
 
 export const displayLootItem = (lootItem) => {
     const parentEl = document.createElement('li');
@@ -19,4 +19,4 @@ export const displayLootItem = (lootItem) => {
     parentEl.appendChild(itemVal);
 
     return parentEl;
-}
+};
