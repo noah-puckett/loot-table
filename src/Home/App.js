@@ -8,9 +8,9 @@ class App extends Component {
     render() {
         const dom = this.renderDOM();
 
-        //render the main page for loot
-        const lootPage = new LootApp();
-        dom.appendChild(lootPage.render());
+        // //render the main page for loot
+        // const lootPage = new LootApp();
+        // dom.appendChild(lootPage.render());
 
         //render the main page for monsters
         const monsterPage = new MonsterApp();
@@ -22,6 +22,7 @@ class App extends Component {
     renderTemplate() {
         return /*html*/ ` 
             <div>
+
             </div>
         `;
     }

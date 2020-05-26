@@ -1,6 +1,7 @@
 import Component from '../Component.js';
 import List from '../List.js';
-import { fetchFromApi, displayLootItem } from '../../utils/helperFunctions.js'; 
+import { fetchFromApi } from '../../utils/apiHelpers.js'; 
+import { displayLootItem } from '../../utils/helperFunctions.js';
 
 
 class LootApp extends Component {

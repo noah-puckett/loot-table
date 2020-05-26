@@ -1,0 +1,6 @@
+.form {
+    display: flex;
+
+    margin: 40px;
+    border: 2px solid red;
+}
