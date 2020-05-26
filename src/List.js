@@ -2,11 +2,12 @@ import Component from './Component.js';
 
 
 class List extends Component {
-
     render() {
+        const { listItems, displayItem } = this.props;
+
         const list = this.renderDOM();
-        this.props.listItems.forEach(listItem => {
-            list.appendChild(this.props.displayItem(listItem));
+        listItems.forEach(listItem => {
+            list.appendChild(displayItem(listItem));
         });
         return list;
     }
@@ -14,7 +15,6 @@ class List extends Component {
     renderTemplate() {
         return /*html*/ `
             <ul>
-
             </ul>
         `;
     }
