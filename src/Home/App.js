@@ -1,5 +1,6 @@
 import Component from '../Component.js';
-import LootList from './LootList.js';
+import List from './List.js';
+import { fetchFromApi, displayLootItem, displayMonsterItem } from '../../utils/helperFunctions.js'; 
 
 
 class App extends Component {
@@ -9,19 +10,20 @@ class App extends Component {
         const dom = this.renderDOM();
         const refreshButton = document.createElement('button');
 
-        const lootist = new LootList({ loot: [] });
-        dom.appendChild(lootist.render());
+        const lootList = new List({ listItems: [], displayItem: displayLootItem });
+        dom.appendChild(lootList.render());
+
+        const monsterList = new List({ listItems: [], displayItem: displayMonsterItem });
+        dom.appendChild(monsterList.render());
         
         refreshButton.textContent = 'Re-Randomize!';
         refreshButton.onclick = () => { location.reload(); };
-        
-        const apiCall = async() => {
-            const rawData = await fetch('http://localhost:8000/loot');
-            const parsedData = await rawData.json();
-            lootist.update({ loot: parsedData });
-        };
 
-        apiCall();
+        fetchFromApi('http://localhost:8000/loot')
+            .then(loot => lootList.update({ listItems: loot }));
+
+        fetchFromApi('http://localhost:8000/monsters')
+            .then(monsters => monsterList.update({ listItems: monsters }));
 
         return dom;
     }
